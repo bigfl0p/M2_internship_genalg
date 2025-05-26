@@ -4,13 +4,12 @@
 #PBS -l ncpus=32
 #PBS -l mem=64gb
 #PBS -l walltime=100:00:00
-#PBS -o /home/datawork-lpba/Blueremediomics_Lou/Metatranscriptomics/data_analysis/trimmed_reads.out
 
 source /appli/bioinfo/cutadapt/4.1/env.sh
 
 # Chemins des données
-PATH_DATA="/home/datawork-lpba/Blueremediomics_Lou/Metatranscriptomics/Results_MetaT_bact_250125/RAWDATA"
-OUTPATH="/home/datawork-lpba/Blueremediomics_Lou/Metatranscriptomics/data_analysis/trimmed_reads"
+PATH_DATA="path/data"
+OUTPATH="/path/out"
 
 # Adaptateurs Illumina standard
 ADAPTER_FWD="AGATCGGAAGAGCACACGTCTGAACTCCAGTCA"
