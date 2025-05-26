@@ -8,12 +8,10 @@
 
 source /appli/bioinfo/htseq-count/0.13.5/env.sh
 
-in="/home/datawork-lpba/Blueremediomics_Lou/Metatranscriptomics/data_analysis/3_mapping_pp"
-path="/home/datawork-lpba/Blueremediomics_Lou/Metatranscriptomics/data_analysis/4_counts"
-gff="/home/datawork-lpba/Blueremediomics_Lou/Metatranscriptomics/Génomes/SynCom/species_annotations/all_genomes.gff"
-
-
-bam="/home/datawork-lpba/Blueremediomics_Lou/Metatranscriptomics/data_analysis/3_mapping_bact/BS2_bact_J14/SC/ARNm/BS2_bactAligned.sortedByCoord.out.bam"
+in="/path/in"
+path="/path/out"
+gff="/path/genomes.gff"
+bam="/path/aligned.bam"
 
 htseq-count -m union \
         --nonunique random \
