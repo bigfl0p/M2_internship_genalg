@@ -9,21 +9,22 @@
 cd ${PBS_O_WORKDIR}
 
 # define path, in and out
-path="/home/datawork-lpba/Blueremediomics_Lou/Metatranscriptomics/data_analysis"
-idx="/home/datawork-lpba/Blueremediomics_Lou/Metatranscriptomics/Génomes/Prymnesium_parvum/PrymneIndexStar"
+path="/path"
+idx="/path/idx"
 
 
-SAMPLE=PS4_bact_J14
-R1=${path}/2_rrna_removed/${SAMPLE}/${SAMPLE}_otherRNA.R1.fastq.gz
-R2=${path}/2_rrna_removed/${SAMPLE}/${SAMPLE}_otherRNA.R2.fastq.gz
-out=${path}/3_mapping_pp/${SAMPLE}/ARNm
+SAMPLE=SAMPLE_NAME
+R1=${path}/${SAMPLE}/${SAMPLE}_otherRNA.R1.fastq.gz
+R2=${path}/${SAMPLE}/${SAMPLE}_otherRNA.R2.fastq.gz
+out=${path}/${SAMPLE}/ARNm
 
-## Remove empty reads ##
+## Remove empty reads (optional) ##
 #zcat ${R1} | awk 'BEGIN {RS="@"; ORS=""; FS="\n"; OFS="\n";} {if ($2 != "" && $4 != "") print "@"$0}' | gzip > ${R1%.R1.fastq.gz}_clean.R1.fastq.gz
 #zcat ${R2} | awk 'BEGIN {RS="@"; ORS=""; FS="\n"; OFS="\n";} {if ($2 != "" && $4 != "") print "@"$0}' | gzip > ${R2%.R2.fastq.gz}_clean.R2.fastq.gz
 
-## Sorted sequences ##
+## Sorted sequences (to optimize mapping) ##
 source /appli/bioinfo/seqkit/2.9.0/env.sh
+
 if [[ -f "${R1%.fastq.gz}.paired.fastq.gz" && -f "${R2%.fastq.gz}.paired.fastq.gz" ]];
 then
 
