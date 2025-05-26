@@ -12,10 +12,10 @@ source /appli/bioinfo/bowtie2/2.5.4/env.sh
 cd ${PBS_O_WORKDIR}
 
 # Define the path to the data
-path="/home/datawork-lpba/Blueremediomics_Lou/Metatranscriptomics/data_analysis"
+path="/path/"
 d_in="1_trimmed_reads"
 d_out="2_rrna_removed"
-db="/home1/datahome/fpetrill/bt2index_rRNA/rRNA_of_references"
+db="/path/to/db"
 
 SAMPLE=B3_bact_J14
 R1=${path}/${d_in}/${SAMPLE}/${SAMPLE}_R1_no_adapter.fastq.gz
